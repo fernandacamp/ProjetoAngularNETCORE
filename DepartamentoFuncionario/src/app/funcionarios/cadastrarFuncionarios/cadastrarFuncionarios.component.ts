@@ -50,13 +50,11 @@ export class CadastrarFuncionariosComponent implements OnInit {
       foto: 'data:image/jpg;base64,' + this.foto,
       rg: this.rg
     }
-    console.log(this.departamentoId)
     this.funcionarioService.PostFuncionarios(this.departamentoId.departamentoId.toString(),fun).subscribe({
       next: (response)=>{
         this.dialogRef.close();
       },
       error: (erro)=>{
-        console.log(erro)
         this.dialogRef.close();
       }
     })

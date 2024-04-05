@@ -41,14 +41,12 @@ export class FuncionariosComponent implements OnInit {
       data:{ departamentoId: this.departamentoId}
     })
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.atualizarLista();
     });
   }
   editarFuncionario(funcionario: any){
     const dialogRef = this.dialog.open(EditarFuncionarioComponent,{
       data:{ 
-        departamentoId: this.departamentoId,
+        id: funcionario.id,
         nome: funcionario.nome,
         rg: funcionario.rg,
         foto: funcionario.foto
@@ -62,7 +60,6 @@ export class FuncionariosComponent implements OnInit {
   atualizarLista(){
     this.funcionarioService.GetFuncionarios(this.departamentoId.toString()).subscribe({ 
       next:(response)=>{
-        console.log(response);
         this.funcionarios = response;
       },
       error:(erro)=>{
@@ -74,11 +71,9 @@ export class FuncionariosComponent implements OnInit {
   excluirFuncionario(id:number){
     this.funcionarioService.DeleteFuncionarios(id.toString()).subscribe({
       next:(response)=>{
-        console.log(response);
         this.atualizarLista();
       },
       error:(erro)=>{
-        console.log(erro);
         this.atualizarLista();
       },
     });

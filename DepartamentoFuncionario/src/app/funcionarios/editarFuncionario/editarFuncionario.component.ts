@@ -50,14 +50,11 @@ export class EditarFuncionarioComponent implements OnInit {
       foto: this.foto.includes('data:image') ? this.foto : 'data:image/jpg;base64,' + this.foto,
       rg: this.rg
     }
-
     this.funcionarioService.PutFuncionarios(this.data.id.toString(), fun).subscribe({
       next: (response)=>{
-        console.log(response)
         this.dialogRef.close();
       },
       error: (erro)=>{
-        console.log(erro)
         this.dialogRef.close();
       }
     })

@@ -31,13 +31,11 @@ export class CadastrarDepartamentosComponent implements OnInit {
       nome: this.nome,
       sigla: this.sigla
     }
-    console.log(dep)
     this.departamentoService.PostDepartamentos(dep).subscribe({
       next: (response)=>{
         this.dialogRef.close();
       },
       error: (erro)=>{
-        console.log(erro)
         this.dialogRef.close();
       }
     })

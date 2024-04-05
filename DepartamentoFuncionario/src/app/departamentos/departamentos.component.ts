@@ -32,7 +32,6 @@ export class DepartamentosComponent implements OnInit {
   cadastrarDepartamento(){
     const dialogRef = this.dialog.open(CadastrarDepartamentosComponent)
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
       this.atualizarLista();
     });
   }
@@ -52,7 +51,6 @@ export class DepartamentosComponent implements OnInit {
   atualizarLista(){
     this.departamentoService.GetDepartamentos().subscribe({ 
       next:(response)=>{
-        console.log(response);
         this.departamentos = response;
       },
       error:(erro)=>{
@@ -64,11 +62,9 @@ export class DepartamentosComponent implements OnInit {
   excluirDepartamento(id:number){
     this.departamentoService.DeleteDepartamentos(id.toString()).subscribe({
       next:(response)=>{
-        console.log(response);
         this.atualizarLista();
       },
       error:(erro)=>{
-        console.log(erro);
         this.atualizarLista();
       },
     });

@@ -38,11 +38,9 @@ export class EditarDepartamentosComponent implements OnInit {
 
     this.departamentoService.PutDepartamentos(this.id.toString(),dep).subscribe({
       next: (response)=>{
-        console.log(response)
         this.dialogRef.close();
       },
       error: (erro)=>{
-        console.log(erro)
         this.dialogRef.close();
       }
     })

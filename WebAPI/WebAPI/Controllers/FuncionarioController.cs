@@ -97,7 +97,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int departamentoId,int id, [FromBody] FuncionarioModel fun)
+        public IActionResult Put(int id, [FromBody] FuncionarioModel fun)
         {
             try
             {
@@ -109,7 +109,7 @@ namespace WebAPI.Controllers
                 }
                 f.nome = fun.nome;
                 f.rg = fun.rg;
-                f.departamentoId = departamentoId;
+                f.foto = fun.foto;
                 _context.SaveChanges();
                 return Ok("Funcionário atualizado com sucesso!");
 
