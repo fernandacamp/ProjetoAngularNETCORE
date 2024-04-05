@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>Cadastrar Funcionário</h2>
+<mat-dialog-content>
+  <form class="example-form">
+    <table class="example-full-width" cellspacing="0">
+      <tr><mat-form-field class="example-full-width">
+        <mat-label>Nome Completo</mat-label>
+        <input matInput [(ngModel)]="nome" [ngModelOptions]="{standalone: true}" (ngModelChange)="mudarNome($event)">
+      </mat-form-field></tr>
+      <tr><mat-form-field class="example-full-width">
+        <mat-label>RG</mat-label>
+        <input matInput [(ngModel)]="rg" [ngModelOptions]="{standalone: true}" (ngModelChange)="mudarRg($event)">
+      </mat-form-field></tr>
+      <tr>
+        <button type="button" mat-raised-button (click)="fileInput.click()">Escolher foto</button>
+        <input hidden (change)="onFileSelected($event)" #fileInput type="file" id="file">
+      </tr>    
+      <button (click)="cadastrarFuncionario()" type="button" mat-raised-button >Cadastrar</button>
+    </table>
+  </form>
+</mat-dialog-content>

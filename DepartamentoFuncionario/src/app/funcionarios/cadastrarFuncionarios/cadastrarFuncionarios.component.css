@@ -1,0 +1,80 @@
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    overflow-x: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+  
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+ }
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #7B68EE;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 5px;
+    display: block;
+    margin: 0 auto 30px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    
+}
+  
+button:hover {
+    background-color: #7B68EE;
+}
+
+button:nth-of-type(1) {
+    margin-bottom: 15px;
+}
+
+td button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #7B68EE;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+  
+td button.edit:hover {
+    background-color: #7B68EE;
+}
+
+@media screen and (max-width: 600px) {
+    th, td {
+      padding: 8px;
+    }
+}
+.new-picture{
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    display: block;
+    object-fit: cover
+}

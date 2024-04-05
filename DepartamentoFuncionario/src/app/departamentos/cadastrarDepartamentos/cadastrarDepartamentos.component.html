@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Cadastrar Departamento</h2>
+<mat-dialog-content>
+  <form class="example-form">
+    <table class="example-full-width" cellspacing="0">
+      <tr><mat-form-field class="example-full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="nome" [ngModelOptions]="{standalone: true}" (ngModelChange)="mudarNome($event)">
+      </mat-form-field></tr>
+      <tr><mat-form-field class="example-full-width">
+        <mat-label>Sigla</mat-label>
+        <input matInput [(ngModel)]="sigla" [ngModelOptions]="{standalone: true}" (ngModelChange)="mudarSigla($event)">
+      </mat-form-field></tr>   
+      <button (click)="cadastrarDepartamento()" type="button" mat-raised-button >Cadastrar</button>
+    </table>
+  </form>
+</mat-dialog-content>

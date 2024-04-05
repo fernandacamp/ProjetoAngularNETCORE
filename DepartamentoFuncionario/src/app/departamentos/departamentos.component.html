@@ -1,0 +1,31 @@
+<div *ngIf ="!mostrarFuncionarios">
+  <h1>Departamentos</h1>
+  <div class="d-flex justify-content-end">
+    <button (click)="cadastrarDepartamento()">Cadastrar novo Departamento</button>
+  </div>
+  <div>
+    <table class="table table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Sigla</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let departamento of departamentos">
+            <th scope="row">{{departamento.id}}</th>
+            <td (click) = "mostrarFuncionario(departamento.id)" style="cursor: pointer;">{{departamento.nome}}</td>
+            <td>{{departamento.sigla}}</td>
+            <td>
+              <button class="edit-button" (click)="editarDepartamento(departamento)"><i class="fas fa-pencil-alt"></i>Editar</button>
+            </td>
+            <td>
+              <button class="delete-button" (click)="excluirDepartamento(departamento.id)"><i class="fas fa-trash-alt"></i>Deletar</button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
+<app-funcionarios *ngIf="mostrarFuncionarios" [departamentoId]="departamentoId"></app-funcionarios>
